@@ -32,11 +32,13 @@
             font-weight: bold;
         }
         #nao {
-            background-color: #ff3333;
+            #nao {
+            background-color: #ccc;
             color: white;
-            font-weight: bold;
-            position: absolute; /* Essencial para o botão se mover */
-            transition: all 0.2s ease;
+            position: fixed; /* Garante que ele use a tela inteira como limite */
+            transition: 0.1s; /* Deixa o movimento mais suave */
+}
+
         }
     </style>
 </head>
@@ -46,7 +48,8 @@
 
     <div class="container">
         <button id="sim" onclick="respostaSim()">SIM!</button>
-        <button id="nao" onmouseover="fugir()">NÃO</button>
+        <button id="nao" onmouseover="fugir()" ontouchstart="fugir()">Não</button>
+
     </div>
 
     <script>
