@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizz Da Thata</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffe6e6;
+            margin-top: 200px;
+        }
+        h1 {
+            color: #cc0000;
+        }
+        .container {
+            position: relative;
+            margin-top: 50px;
+        }
+        button {
+            font-size: 20px;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        #sim {
+            background-color: #00cc44;
+            color: white;
+            font-weight: bold;
+        }
+        #nao {
+            background-color: #ff3333;
+            color: white;
+            font-weight: bold;
+            position: absolute; /* Essencial para o botão se mover */
+            transition: all 0.2s ease;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Meu amor tem a testa grande?</h1>
+
+    <div class="container">
+        <button id="sim" onclick="respostaSim()">SIM!</button>
+        <button id="nao" onmouseover="fugir()">NÃO</button>
+    </div>
+
+    <script>
+        function fugir() {
+            var botaoNao = document.getElementById('nao');
+            
+            // Posições aleatórias na tela
+            var x = Math.random() * (window.innerWidth - 150);
+            var y = Math.random() * (window.innerHeight - 100);
+
+            // Garante que o botão não vá para fora da tela
+            if(x < 0) x = 0;
+            if(y < 0) y = 0;
+
+            botaoNao.style.left = x + 'px';
+            botaoNao.style.top = y + 'px';
+        }
+
+        function respostaSim() {
+            alert('Você aceitou! ❤️');
+        }
+    </script>
+</body>
+</html>
