@@ -3,72 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quizz Da Thata</title>
+    <title>KKKKKKKKKKKKKKKKKKKKKK Aula Boa</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             text-align: center;
-            background-color: #ffe6e6;
-            margin-top: 200px;
+            /* Fundo gradiente em tons de verde claro/pastel refrescante */
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            margin: 0;
+            padding-top: 100px;
+            overflow-x: hidden;
+            height: 100vh;
+            position: relative;
         }
-        h1 {
-            color: #cc0000;
+        /* Hello Kittys flutuantes adaptadas para o tema verde */
+        .hellokitty-bg {
+            position: absolute;
+            width: 40px;
+            height: auto;
+            opacity: 0.25;
+            /* Efeito sutil de sombra esverdeada nas silhuetas flutuantes */
+            filter: drop-shadow(0 0 5px rgba(76, 175, 80, 0.3));
+            animation: flutuar 7s linear infinite;
+            bottom: -60px;
+            z-index: 0;
+            pointer-events: none;
+        }
+        @keyframes flutuar {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0.25; }
+            80% { opacity: 0.25; }
+            100% { transform: translateY(-115vh) rotate(360deg); opacity: 0; }
         }
         .container {
+            padding: 20px;
             position: relative;
-            margin-top: 50px;
+            z-index: 1;
         }
-        button {
-            font-size: 20px;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            margin: 10px;
+        h1 {
+            color: #2e7d32; /* Verde floresta escuro para contraste elegante */
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
         }
-        #sim {
-            background-color: #00cc44;
-            color: white;
+        p {
+            color: #388e3c; /* Subtítulo em verde médio */
+            font-size: 18px;
             font-weight: bold;
         }
+        .botoes {
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        button {
+            padding: 15px 35px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        #sim {
+            background-color: #4caf50; /* Botão Sim Verde Vibrante */
+            color: rgb(218, 221, 220);
+            box-shadow: 0 4px 20px rgba(76, 175, 80, 0.4);
+            transition: transform 0.2s ease;
+        }
         #nao {
-          background-color: #ccc;
-            color: white;
-            position: fixed; /* Garante que ele use a tela inteira como limite */
-            transition: 0.1s; /* Deixa o movimento mais suave */
-}
-
-        
+            background-color: #05ee8d; /* Botão Não em cinza azulado neutro */
+            color: #ffffff;
+            position: fixed;
+            transition: all 0.1s ease;
+        }
+        /* Tela de sucesso verde que aparece no final */
+        #tela-sucesso {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+            z-index: 10;
+        }
+        #tela-sucesso h1 {
+            color: #2e7d32;
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+        #tela-sucesso img {
+            max-width: 90%;
+            max-height: 55vh;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
     </style>
 </head>
 <body>
 
-    <h1>Meu amor tem a testa grande?</h1>
+    <script>
+        const urlHelloKitty = "https://plain-enam-prod-public.komododecks.com/202606/11/etQDZPAhtRZifzToXyWW/image.png";
 
-    <div class="container">
-        <button id="sim" onclick="respostaSim()">SIM!</button>
-        <button id="nao" onmouseover="fugir()" ontouchstart="fugir()">Não</button>
+        for (let i = 0; i < 12; i++) {
+            let kitty = document.createElement('img');
+            kitty.className = 'hellokitty-bg';
+            kitty.src = urlHelloKitty;
+            kitty.style.left = Math.random() * 100 + 'vw';
+            kitty.style.animationDelay = Math.random() * 6 + 's';
+            let tamanhoAleatorio = Math.random() * 20 + 35; 
+            kitty.style.width = tamanhoAleatorio + 'px';
+            document.body.appendChild(kitty);
+        }
+    </script>
 
+    <div id="tela-principal" class="container">
+        <h1>A Aula Com a Professora Substituta é Boa Amor???</h1>
+        <p>Pense Com Carinho Antes  De Responder! 💚🐸</p>
+
+        <div class="botoes">
+            <button id="sim" onclick="aceitou()">Sim</button>
+            <button id="nao" onmouseover="fugir()" ontouchstart="fugir()">Não</button>
+        </div>
+    </div>
+
+    <div id="tela-sucesso">
+        <h1>Eu Também Acho Que Ta Boa KKKKKKKKKKKKKKKKKKKK!</h1>
+        <img src="https://media1.tenor.com/m/WbRw_z7s3SYAAAAC/pepe-walking-away.gif" alt="Hello Kitty Comemorando">
     </div>
 
     <script>
+        let escalaSim = 1;
+
         function fugir() {
-            var botaoNao = document.getElementById('nao');
+            const botaoNao = document.getElementById('nao');
+            const botaoSim = document.getElementById('sim');
             
-            // Posições aleatórias na tela
-            var x = Math.random() * (window.innerWidth - 150);
-            var y = Math.random() * (window.innerHeight - 100);
+            const larguraJanela = window.innerWidth - 120;
+            const alturaJanela = window.innerHeight - 120;
+            
+            const posX = Math.random() * larguraJanela;
+            const posY = Math.random() * alturaJanela;
+            
+            botaoNao.style.left = posX + 'px';
+            botaoNao.style.top = posY + 'px';
 
-            // Garante que o botão não vá para fora da tela
-            if(x < 0) x = 0;
-            if(y < 0) y = 0;
-
-            botaoNao.style.left = x + 'px';
-            botaoNao.style.top = y + 'px';
+            escalaSim += 0.3;
+            botaoSim.style.transform = `scale(${escalaSim})`;
         }
 
-        function respostaSim() {
-            alert('Você aceitou! ❤️');
+        function aceitou() {
+            document.getElementById('tela-principal').style.display = 'none';
+            document.getElementById('nao').style.display = 'none';
+            
+            const telaSucesso = document.getElementById('tela-sucesso');
+            telaSucesso.style.display = 'flex';
         }
     </script>
 </body>
